@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "\nextends Node2D\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\n\nfunc _ready():\n\tset_process(true)\n\t\nfunc _process(delta):\n\tvar pos = get_node(\"Sprite\").get_pos()\n\tvar result = typeof(pos)\n\t\n\tif (Input.is_action_pressed(\"ui_left\")):\n\t\tpos.x -= 10\n\telif (Input.is_action_pressed(\"ui_right\")):\n\t\tpos.x += 10\n\t\t\n\tif(Input.is_action_pressed(\"ui_up\")):\n\t\tpos.y += -10\n\telif (Input.is_action_pressed(\"ui_down\")):\n\t\tpos.y += 10\n\t\t\n\tget_node(\"Sprite\").set_pos(pos)\n\tpass\n\n\n"
+
+[node name="Node2D" type="Node2D"]
+
+script/script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 541.597, 253.169 )
+texture = ExtResource( 1 )
+
+
