@@ -13,6 +13,6 @@ func _draw():
 
 func _input_event(ev):
 
-    if (ev.type==InputEvent.MOUSE_BUTTON and ev.pressed):
+    if (ev.type==InputEvent.SCREEN_TOUCH and ev.pressed):
         tapped=true
         update()
