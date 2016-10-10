@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/Sprite.gd" type="Script" id=1]
 [ext_resource path="res://textures/player.png" type="Texture" id=2]
 [ext_resource path="res://textures/icon.png" type="Texture" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://textures/arrow.png" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -154,20 +154,73 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Button" type="Button" parent="."]
+[node name="up" type="Button" parent="."]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 12.0
-margin/bottom = 20.0
+margin/left = 146.0
+margin/top = 375.0
+margin/right = 222.0
+margin/bottom = 445.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 4 )
+flat = true
+clip_text = true
+
+[node name="down" type="Button" parent="."]
+
+rect/rotation = 180.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 576.0
+margin/right = 268.0
+margin/bottom = 646.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 icon = ExtResource( 4 )
-flat = false
+flat = true
+
+[node name="left" type="Button" parent="."]
+
+rect/rotation = 90.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 52.0
+margin/top = 502.0
+margin/right = 128.0
+margin/bottom = 572.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 4 )
+flat = true
+
+[node name="right" type="Button" parent="."]
+
+rect/rotation = 270.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 280.0
+margin/top = 458.0
+margin/right = 356.0
+margin/bottom = 528.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+icon = ExtResource( 4 )
+flat = true
 
 

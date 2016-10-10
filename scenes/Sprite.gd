@@ -10,17 +10,17 @@ func _ready():
 func _fixed_process(delta):
 	var nodo = get_node("KinematicBody2D")
 	var direction = Vector2(0,0)
-	if ( get_node("Button").is_pressed() ):
-		print("press")
+	if ( get_node("up").is_pressed() ):
+		print("Up presed")
 		direction += Vector2(0,-1)
 		nodo.rotate(-radian)
-	if ( Input.is_action_pressed("player_down") ):
+	if ( get_node("down").is_pressed() ):
 		direction += Vector2(0,1)
 		nodo.rotate(-radian)
-	if ( Input.is_action_pressed("player_left") ):
+	if ( get_node("left").is_pressed() ):
 		direction += Vector2(-1,0)
 		nodo.rotate(-radian)
-	if ( Input.is_action_pressed("player_right") ):
+	if ( get_node("right").is_pressed() ):
 		direction += Vector2(1,0)
 		nodo.rotate(-radian)
 	
