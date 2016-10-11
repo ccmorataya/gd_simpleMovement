@@ -5,7 +5,6 @@
 [ext_resource path="res://textures/icon.png" type="Texture" id=3]
 [ext_resource path="res://textures/arrow.png" type="Texture" id=4]
 
-
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -43,20 +42,19 @@ _update_shape_index = 0
 
 [node name="wall" type="Container" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = -23.0
-margin/top = -511.0
-margin/right = 17.0
-margin/bottom = -471.0
+margin/left = -5.0
+margin/top = -53.0
+margin/right = 35.0
+margin/bottom = -13.0
 
 [node name="wall_down" type="StaticBody2D" parent="wall"]
 
-transform/pos = Vector2( 518.499, 491.197 )
-transform/scale = Vector2( 5.60272, 0.311054 )
+transform/pos = Vector2( 526.897, 644.766 )
+transform/scale = Vector2( 15.658, 0.311054 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -80,9 +78,9 @@ _update_shape_index = 0
 
 [node name="wall_right" type="StaticBody2D" parent="wall"]
 
-transform/pos = Vector2( 708.153, 323.595 )
+transform/pos = Vector2( 1022.84, 346.286 )
 transform/rot = 90.0
-transform/scale = Vector2( 5.60272, 0.311054 )
+transform/scale = Vector2( 9.186, 0.311054 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -106,8 +104,8 @@ _update_shape_index = 0
 
 [node name="wall_up" type="StaticBody2D" parent="wall"]
 
-transform/pos = Vector2( 520.499, 155.196 )
-transform/scale = Vector2( 5.60272, 0.311054 )
+transform/pos = Vector2( 523.557, 67.0824 )
+transform/scale = Vector2( 15.3448, 0.311054 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -131,9 +129,9 @@ _update_shape_index = 0
 
 [node name="wall_left" type="StaticBody2D" parent="wall"]
 
-transform/pos = Vector2( 330.498, 322.196 )
+transform/pos = Vector2( 20.8415, 354.744 )
 transform/rot = -90.0
-transform/scale = Vector2( 5.60272, 0.311054 )
+transform/scale = Vector2( 9.28703, 0.311054 )
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -163,15 +161,19 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 146.0
 margin/top = 375.0
-margin/right = 222.0
-margin/bottom = 445.0
+margin/right = 210.0
+margin/bottom = 439.0
 toggle_mode = false
 click_on_press = true
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 4 )
 flat = true
 clip_text = true
+
+[node name="sp_up" type="Sprite" parent="up"]
+
+transform/pos = Vector2( 32, 32 )
+texture = ExtResource( 4 )
 
 [node name="down" type="Button" parent="."]
 
@@ -180,15 +182,19 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 192.0
-margin/top = 576.0
-margin/right = 268.0
-margin/bottom = 646.0
+margin/left = 207.0
+margin/top = 561.0
+margin/right = 271.0
+margin/bottom = 625.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 4 )
 flat = true
+
+[node name="sp_down" type="Sprite" parent="down"]
+
+transform/pos = Vector2( 32, 32 )
+texture = ExtResource( 4 )
 
 [node name="left" type="Button" parent="."]
 
@@ -199,13 +205,17 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 52.0
 margin/top = 502.0
-margin/right = 128.0
-margin/bottom = 572.0
+margin/right = 116.0
+margin/bottom = 566.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 4 )
 flat = true
+
+[node name="sp_left" type="Sprite" parent="left"]
+
+transform/pos = Vector2( 32, 32 )
+texture = ExtResource( 4 )
 
 [node name="right" type="Button" parent="."]
 
@@ -214,14 +224,34 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 280.0
-margin/top = 458.0
-margin/right = 356.0
-margin/bottom = 528.0
+margin/left = 282.0
+margin/top = 440.0
+margin/right = 346.0
+margin/bottom = 504.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-icon = ExtResource( 4 )
 flat = true
+
+[node name="sp_right" type="Sprite" parent="right"]
+
+transform/pos = Vector2( 32, 32 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 41.0
+margin/top = 43.0
+margin/right = 151.0
+margin/bottom = 57.0
+text = "Roll the items"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 
